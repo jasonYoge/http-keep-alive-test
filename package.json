@@ -1,0 +1,69 @@
+{
+  "name": "http-keep-alive-test",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "jasonYoge",
+    "email": "jasonYoge@github.com",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    ""
+  ],
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-xo": "^0.26.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "https://github.com/jasonYoge/http-keep-alive-test.git",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "agentkeepalive": "^4.1.0"
+  }
+}
